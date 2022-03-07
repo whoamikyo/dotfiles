@@ -4,11 +4,11 @@
 unsetopt BG_NICE
 
 # WSL specific things
-if grep --quiet microsoft /proc/version 2>/dev/null; then
+#if grep --quiet microsoft /proc/version 2>/dev/null; then
   # Set Windows display for WSL
-  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')':0.0'
-  export LIBGL_ALWAYS_INDIRECT=1
-fi
+#  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')':0.0'
+#  export LIBGL_ALWAYS_INDIRECT=1
+#fi
 
 # Custom aliases
 [ -f ~/.aliases.zsh ] && source ~/.aliases.zsh
@@ -21,7 +21,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 [ -f ~/.env ] && source ~/.env
 
 # Original PATH from genie - Temporary fix, see https://github.com/arkane-systems/genie/issues/201
-[ -f /run/genie.path ] && export PATH=$PATH:$(cat /run/genie.path)
+#[ -f /run/genie.path ] && export PATH=$PATH:$(cat /run/genie.path)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -34,15 +34,15 @@ fi
 export EDITOR='vim'
 
 # screen
-export SCREENDIR=$HOME/.screen
+#export SCREENDIR=$HOME/.screen
 
 # Go
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
+#export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:$(go env GOPATH)/bin
 
 # Volta (node, npm)
-export VOLTA_HOME=$HOME/.volta
-export PATH=$VOLTA_HOME/bin:$PATH
+#export VOLTA_HOME=$HOME/.volta
+#export PATH=$VOLTA_HOME/bin:$PATH
 
 ## History command configuration
 HISTSIZE=5000                 # How many lines of history to keep in memory
